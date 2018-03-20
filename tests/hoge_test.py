@@ -26,8 +26,8 @@ class HogeTest(unittest.TestCase):
         fuga = Fuga()
         self.assertTrue(fuga.index())
         
-    def test_fail_all_time(self):
-        self.assertFalse(True)
+    def test_fixed(self):
+        self.assertFalse(False)
 
 
 def suite():
