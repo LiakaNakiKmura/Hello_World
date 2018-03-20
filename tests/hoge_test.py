@@ -1,7 +1,18 @@
 # coding:utf-8
 
 import unittest
-from fuga import Fuga
+
+
+if __name__ == '__main__':
+    import sys, os
+    sys.path.append(os.path.abspath(os.path.join(
+            os.path.dirname(__file__),os.pardir)))
+    sys.path.append('..')
+    sys.path.append('./src')
+    import src.fuga 
+    from src.fuga import Fuga
+else:
+    from fuga import Fuga
 
 class HogeTest(unittest.TestCase):
 
@@ -14,9 +25,15 @@ class HogeTest(unittest.TestCase):
     def test_fuga(self):
         fuga = Fuga()
         self.assertTrue(fuga.index())
+        
+    def test_fail_all_time(self):
+        self.assertFalse(True)
 
 
 def suite():
     suite = unittest.TestSuite()
     suite.addTests(unittest.makeSuite(HogeTest))
     return suite
+
+if __name__ == '__main__':
+    unittest.main()
