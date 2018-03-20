@@ -3,6 +3,7 @@ import sys
 sys.path.append('./src')
 sys.path.append('./tests')
 
+# Add Comment to test
 
 setup(
     name = 'Hoge',
